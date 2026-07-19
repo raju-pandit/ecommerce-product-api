@@ -2,12 +2,13 @@ import express from "express";
 import mongoose from "mongoose";
 import Product from "./schema.js";
 import Data from "./data.js";
+import dotenv from "dotenv";
 
+dotenv.config();
+await mongoose.connect(process.env.MONGODB_URI);
 
 const app=express();
-await mongoose.connect(
-  "mongodb+srv://panditraju7369_db_user:e0kRcHVAUDyrvx46@cluster0.zd3ojjf.mongodb.net/ProductDetails",
-);
+
 
 app.use(express.json());
 
@@ -131,8 +132,6 @@ app.delete("/products/slug/:slug", async (req, res) => {
 
 
 
-
-app.listen(3000,()=>{
-
-    console.log("Sever is running port no 3000");
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server is running");
 });

@@ -159,7 +159,7 @@ All API endpoints were tested using **Postman**.
 
 GitHub: https://github.com/raju-pandit
 
-LinkedIn: *(Add your LinkedIn profile here)*
+
 
 ---
 
